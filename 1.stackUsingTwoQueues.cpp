@@ -81,6 +81,7 @@ int dequeue2()
         return x;
     }
 }
+
 void pop(){
     while (front1 != NULL || front2 != NULL)
     {
@@ -90,7 +91,7 @@ void pop(){
             {
                 enqueue2(dequeue1());
             }
-            cout<<dequeue1()<<endl;
+            cout<<"Elements: "<<dequeue1()<<endl;
         }
         else if (front1 == NULL)
         {
@@ -98,21 +99,17 @@ void pop(){
             {
                 enqueue1(dequeue2());
             }
-            cout<<dequeue2()<<endl;
+            cout<<"Elements: "<<dequeue2()<<endl;
         }
     }
 }
 int main(){
     int choice,result,element;
-    int i,n=0;
+    int n=0;
     while(1){
         cout << ("1. Push\n");
         cout << ("2. Pop\n");
-        cout << ("3. Top\n");
-        cout << ("4. Print all elements of the stack\n");
-        cout << ("5. isEmpty\n");
-        cout << ("5. isFull\n");
-        cout << ("6. Quit\n");
+        cout << ("3. Quit\n");
         cout << ("Enter your choice: ");
         cin >> choice;
 
@@ -120,6 +117,7 @@ int main(){
             case 1:
                 cout << "\nEnter the number of element into stack:\n ";
                 cin  >> n;
+                int i;
                 while(i<n){
                     cout << "Enter the elements to insert into stack:\n ";
                     cin  >> element;
@@ -128,10 +126,10 @@ int main(){
                 }
                 break;
             case 2:
-                cout << "\n\nElements popped\n\n";
+                cout << "\n\nElements popped: \n";
                 pop();
                 break;
-            case 6:
+            case 3:
                 exit(1);
         }
     }
